@@ -1,19 +1,20 @@
 package pl.spark
 
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{Dataset, SparkSession}
 
-class SparkApp extends App {
+class SparkApp {
 
-  // setup
-  if (args.length == 0) {
-    System.err.println("Dude, I need filename path as input parameter")
-    System.exit(-1)
+  def initSpark(args: Array[String]) : (SparkSession, Dataset[String]) = {
+    if (args.length == 0) {
+      System.err.println("Dude, I need filename path as input parameter")
+      System.exit(-1)
+    }
+
+    val spark = SparkSession.builder()
+      .appName("test")
+      .master("local")
+      .getOrCreate()
+
+    (spark, spark.read.textFile(args(0)))
   }
-  val filename = args(0)
-
-  val spark = SparkSession.builder()
-    .appName("test")
-    .master("local")
-    .getOrCreate()
-  val textFile = spark.read.textFile(filename)
 }
