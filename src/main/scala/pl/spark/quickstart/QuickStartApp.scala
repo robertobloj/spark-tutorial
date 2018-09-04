@@ -1,7 +1,8 @@
-package pl.spark
+package pl.spark.quickstart
 
+import pl.spark.SparkSetup
 
-object QuickStartApp extends SparkApp {
+object QuickStartApp extends SparkSetup {
 
   def main(args: Array[String]): Unit = {
     val (spark, textFile) = initSpark(args)

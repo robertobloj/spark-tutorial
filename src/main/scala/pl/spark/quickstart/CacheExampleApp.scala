@@ -1,8 +1,10 @@
-package pl.spark
+package pl.spark.quickstart
+
+import pl.spark.SparkSetup
 
 import scala.collection.mutable.ArrayBuffer
 
-object CacheExampleApp extends SparkApp {
+object CacheExampleApp extends SparkSetup {
 
   private def average(list: ArrayBuffer[Long]): Double = list.foldLeft(0.0)(_ + _) / list.foldLeft(0.0)((r, _) => r + 1)
   private val iterations = 50

@@ -8,6 +8,13 @@ Examples are a little bit customized.
 
 ## Examples
 
+Before you run examples, you should run:
+
+```
+    sbt package
+```
+
+
 1. Quick start
 
 Run following command:
@@ -16,7 +23,7 @@ Run following command:
 cd spark-tutorial
 
 [SPARK_HOME]/bin/spark-submit \
-    --class "pl.spark.QuickStartApp"  \
+    --class "pl.spark.quickstart.QuickStartApp"  \
     --master local[4] \
     target/scala-2.11/spark-tutorial_2.11-0.1.jar \
     [FILE_NAME]
@@ -33,7 +40,7 @@ Run following command:
 
 ```
 [SPARK_HOME]/bin/spark-submit \
-    --class "pl.spark.CacheExampleApp"  \
+    --class "pl.spark.quickstart.CacheExampleApp"  \
     --master local[4] \
     target/scala-2.11/spark-tutorial_2.11-0.1.jar \
     [FILE_NAME]

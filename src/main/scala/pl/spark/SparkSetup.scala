@@ -2,7 +2,7 @@ package pl.spark
 
 import org.apache.spark.sql.{Dataset, SparkSession}
 
-class SparkApp {
+class SparkSetup {
 
   def initSpark(args: Array[String]) : (SparkSession, Dataset[String]) = {
     if (args.length == 0) {
